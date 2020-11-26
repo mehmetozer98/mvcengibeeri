@@ -1,0 +1,281 @@
+﻿@model MVCEngiBeering.ViewModels.BatchViewModel;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/css/BatchReport.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <meta charset="utf-8" />
+    <title>BatchReport</title>
+</head>
+<body>
+
+    <h3>Machine @Html.DisplayFor(model => model.machine)</h3>
+
+    <div class="container">
+        <div id="staticAttributes" class="row">
+            <div class="col">
+                <h3>Batch id</h3>
+            </div>
+            <div class="col">
+                <h3>Product type</h3>
+            </div>
+            <div class="col">
+                <h3>Total amount</h3>
+            </div>
+            <div class="col">
+                <h3>Speed</h3>
+            </div>
+        </div>
+        <div id="staticValues" class="row">
+            <div class="col">
+                <p>@Html.DisplayFor(model => model.id)</p>
+            </div>
+            <div class="col">
+                <p>@Html.DisplayFor(model => model.producttype)</p>
+            </div>
+            <div class="col">
+                <p>@Html.DisplayFor(model => model.setamount)</p>
+            </div>
+            <div class="col">
+                <p>@Html.DisplayFor(model => model.setspeed)</p>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col">
+                <h4>Timestamp</h4>
+            </div>
+            <div class="col">
+                <h4>Current state</h4>
+            </div>
+            <div class="col">
+                <h4>Products produced</h4>
+            </div>
+            <div class="col">
+                <h4>Defective product</h4>
+            </div>
+            <div class="col">
+                <h4>Stop Reason</h4>
+            </div>
+            <div class="col">
+                <h4>Vibration</h4>
+            </div>
+            <div class="col">
+                <h4>Humidity</h4>
+            </div>
+            <div class="col">
+                <h4>Temperature</h4>
+            </div>
+        </div>
+        @foreach (var data in Model.DataReadings)
+        {
+            @if (data.type == 1)
+            {
+                <div id="values" class="row">
+                    <div class="col">
+                        <p>@data.time</p>
+                    </div>
+                    <div class="col">
+                        <p id=""></p>
+                    </div>
+                    <div class="col">
+                        <p>@data.value</p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                </div>
+            }
+            else if (data.type == 2)
+            {
+                <div id="values" class="row">
+                    <div class="col">
+                        <p>@data.time</p>
+                    </div>
+                    <div class="col">
+                        <p id=""></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p>@data.value</p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                </div>
+            }
+            else if (data.type == 3)
+            {
+                <div id="values" class="row">
+                    <div class="col">
+                        <p>@data.time</p>
+                    </div>
+                    <div class="col">
+                        <p id=""></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p>@data.value</p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                </div>
+            }
+            else if (data.type == 13)
+            {
+                <div id="values" class="row">
+                    <div class="col">
+                        <p>@data.time</p>
+                    </div>
+                    <div class="col">
+                        <p id=""></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p>@data.value</p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                </div>
+            }
+            else if (data.type == 11)
+            {
+                <div id="values" class="row">
+                    <div class="col">
+                        <p>@data.time</p>
+                    </div>
+                    <div class="col">
+                        <p id=""></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p>@data.value</p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                </div>
+            }
+            else if (data.type == 12)
+            {
+                <div id="values" class="row">
+                    <div class="col">
+                        <p>@data.time</p>
+                    </div>
+                    <div class="col">
+                        <p id=""></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p>@data.value</p>
+                    </div>
+                </div>
+            }
+            else if (data.type == 6)
+            {
+                <div id="values" class="row">
+                    <div class="col">
+                        <p>@data.time</p>
+                    </div>
+                    <div class="col">
+                        <p id="">@data.value</p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                    <div class="col">
+                        <p></p>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+
+
+</body>
+</html>
